@@ -22,7 +22,7 @@ class Calculator {
   }
 
   selectOperation(operation) {
-    if (!this.currentDisplay) return;
+    if (!this.currentDisplay || this.currentDisplay === ".") return;
     if (this.previousDisplay) this.calculate();
     this.operation = operation;
     this.previousDisplay = this.currentDisplay;
