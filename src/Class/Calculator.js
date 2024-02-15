@@ -47,6 +47,7 @@ class Calculator {
         computeResult = prevNumber * currNumber;
         break;
       case "/":
+        if (currNumber === 0) return;
         computeResult = prevNumber / currNumber;
         break;
       default:
