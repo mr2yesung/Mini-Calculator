@@ -13,6 +13,7 @@ class Calculator {
 
   delete() {
     this.currentDisplay = this.currentDisplay.toString().slice(0, -1);
+    if (this.currentDisplay === "-") this.currentDisplay = "";
   }
 
   appendNumber(number) {
