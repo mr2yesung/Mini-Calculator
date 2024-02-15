@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator-grid {
+  --button-length: 100px;
+  --display-min-height: 120px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, var(--button-length));
+  grid-template-rows: minmax(var(--display-min-height), auto) repeat(
+      5,
+      var(--button-length)
+    );
+}
+
+@media (max-width: 500px) {
+  .calculator-grid {
+    --button-length: 50px;
+    --display-min-height: 60px;
+  }
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-display {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.current-display {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.calculator-grid > button {
+  background-color: white;
+  border: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+@media (max-width: 500px) {
+  .output {
+    padding: 6px;
+  }
+
+  .previous-display {
+    font-size: 1rem;
+  }
+
+  .current-display {
+    font-size: 1.5rem;
+  }
+
+  .calculator-grid > button {
+    font-size: 1rem;
+  }
+}
+
+@media (pointer: fine) {
+  .calculator-grid > button:hover {
+    background-color: gray;
+  }
+}
+
+.span-two {
+  grid-column: span 2;
+}
