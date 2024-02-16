@@ -60,11 +60,31 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.currentDisplayElement.innerText = this.currentDisplay;
+    this.currentDisplayElement.innerText = this.getDisplayNumber(
+      this.currentDisplay
+    );
 
     this.previousDisplayElement.innerText = this.operation
-      ? `${this.previousDisplay} ${this.operation}`
+      ? `${this.getDisplayNumber(this.previousDisplay)} ${this.operation}`
       : "";
+  }
+
+  getDisplayNumber(number) {
+    const numberString = number.toString();
+    const [integerString, decimalString] = numberString.split(".");
+
+    const integerNumber = parseFloat(integerString);
+    const integerDisplay = isNaN(integerNumber)
+      ? ""
+      : integerNumber.toLocaleString("en", {
+          maximumFractionDigits: 0,
+        });
+
+    const decimalDisplay = numberString.includes(".")
+      ? `.${decimalString}`
+      : "";
+
+    return `${integerDisplay}${decimalDisplay}`;
   }
 }
 
