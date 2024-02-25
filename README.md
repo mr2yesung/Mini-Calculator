@@ -41,3 +41,8 @@ The copyright of [Favicon](https://fonts.google.com/icons?selected=Material+Symb
 - Personal Email: mryesung1@gmail.com
 - Public Email: yeseonk@uci.edu
 - Phone: (+1) 949-836-1299
+
+## Takeaways
+
+- Developed a JavaScript class adhering strictly to the Single Responsibility Principle in Object-Oriented Programming.
+- Gained proficiency in enhancing code architecture by segregating HTML attributes for CSS into class attributes, while effectively employing ids and data attributes for JavaScript, resulting in improved code organization and readability.
